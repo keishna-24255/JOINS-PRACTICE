@@ -39,5 +39,5 @@ This repository demonstrates my understanding of SQL JOINs and my ability to wri
 
 #OUTPUT
 
-
+<img width="751" height="702" alt="Image" src="https://github.com/user-attachments/assets/e91d477a-f4d3-4a78-80be-6c8d9de69694" />
 

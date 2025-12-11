@@ -1,0 +1,59 @@
+
+
+-- Creating sample tables
+CREATE TABLE students (
+    id INT,
+    name VARCHAR(50),
+    course_id INT
+);
+
+CREATE TABLE courses (
+    course_id INT,
+    course_name VARCHAR(50)
+);
+
+-- Inserting sample data
+INSERT INTO students VALUES
+(1, 'Rahul', 101),
+(2, 'Neha', 102),
+(3, 'Aman', NULL);
+
+INSERT INTO courses VALUES
+(101, 'Python'),
+(102, 'Java'),
+(103, 'SQL');
+
+-- INNER JOIN
+SELECT students.name, courses.course_name
+FROM students
+INNER JOIN courses
+ON students.course_id = courses.course_id;
+
+-- LEFT JOIN
+SELECT students.name, courses.course_name
+FROM students
+LEFT JOIN courses
+ON students.course_id = courses.course_id;
+
+-- RIGHT JOIN
+SELECT students.name, courses.course_name
+FROM students
+RIGHT JOIN courses
+ON students.course_id = courses.course_id;
+
+-- FULL JOIN (PostgreSQL)
+SELECT students.name, courses.course_name
+FROM students
+FULL JOIN courses
+ON students.course_id = courses.course_id;
+
+-- FULL JOIN (MySQL workaround)
+SELECT students.name, courses.course_name
+FROM students
+LEFT JOIN courses
+ON students.course_id = courses.course_id
+UNION
+SELECT students.name, courses.course_name
+FROM students
+RIGHT JOIN courses
+ON students.course_id = courses.course_id;
